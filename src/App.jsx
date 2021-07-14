@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import HomePage from "./components/HomePage";
+// import Route from "react-router-dom";
 
 function App() {
+  // return <Route exact path="/" component={HomePage} />;
   return (
-    <div className="bg-red-500 text-blue-500">
-      <span className="italic text-4xl">HELLO</span>
+    <div className="bg-gray-100">
+      <HomePage />;
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
