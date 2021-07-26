@@ -14,7 +14,7 @@ const CollectionItem = ({name, imageUrl, price}) => {
                 <span className="bottom-0">${price}</span>
             </div>
             <button
-                className={`absolute w-3/4 p-2 px-4 text-gray-800 bg-gray-100/60 bottom-8 left-12 hover:bg-black hover:text-gray-100 ${
+                className={`absolute w-3/4 p-2 px-4 text-gray-800 bg-gray-100/60 bottom-8 left-1/2 transform -translate-x-1/2 hover:bg-black hover:text-gray-100 ${
                     showButton ? "" : "hidden"
                 }`}
             >

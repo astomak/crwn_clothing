@@ -1,39 +1,54 @@
 import React from "react";
 import SearchIcon from "./search-icon.png";
-import Logo from "./logo.jpg";
+import {ReactComponent as Logo} from "./crown.svg";
 import {Link} from "react-router-dom";
 
 const Navigation = () => {
     return (
-        <nav className="flex justify-between bg-gray-800/50 py-4 px-2">
+        <nav className="flex justify-between px-2 py-4">
             <Link
                 id="logo"
-                className="h-10 hidden sm:flex text-white items-center cursor-pointer hover:scale-110 transition-all ease-in-out duration-300"
+                className="flex flex-col items-center transition-all duration-300 ease-in-out cursor-pointer w-14 hover:scale-110"
                 to="/"
             >
-                <img src={Logo} alt="phoenix bird clipart photo" className="object-contain h-full" />
-                <span>CROWN</span>
+                <Logo></Logo>
+                {/* <img src={Logo} alt="phoenix bird clipart photo" className="object-cover h-full" /> */}
+                {/* <span>CROWN</span> */}
             </Link>
-            <div id="search-bar" className="relative w-3/6">
+            {/* <div id="search-bar" className="relative w-3/6">
                 <input
                     type="text"
-                    className="bg-gray-300 rounded-lg h-full w-full ring-gray-400 focus:ring-4 outline-none px-4"
+                    className="w-full h-full px-4 bg-gray-300 rounded-lg outline-none ring-gray-400 focus:ring-4"
                 />
                 <img
                     src={SearchIcon}
-                    className="h-full absolute right-0 top-0 px-2 py-2 bg-gray-400 rounded-r-lg hover:bg-gray-400/80 cursor-pointer"
+                    className="absolute top-0 right-0 h-full px-2 py-2 bg-gray-400 rounded-r-lg cursor-pointer hover:bg-gray-400/80"
                 />
-            </div>
-            <div id="navigation-button" className="flex space-around text-gray-200 space-x-4">
-                <button className="border-2 border-white p-1 px-4 rounded-lg hover:bg-gray-200 hover:text-black active:translate-y-1 transition ease-in-out duration-200 focus:outline-none">
+            </div> */}
+            {/* <div id="navigation-button" className="flex space-x-4 text-gray-200 space-around">
+                <button className="p-1 px-4 transition duration-200 ease-in-out border-2 border-white rounded-lg hover:bg-gray-200 hover:text-black active:translate-y-1 focus:outline-none">
                     Cart
                 </button>
-                <button className="border-2 border-white p-1 px-4 rounded-lg hover:bg-gray-200 hover:text-black active:translate-y-1 transition ease-in-out duration-200 focus:outline-none">
+                <button className="p-1 px-4 transition duration-200 ease-in-out border-2 border-white rounded-lg hover:bg-gray-200 hover:text-black active:translate-y-1 focus:outline-none">
                     Login/SignUp
                 </button>
-            </div>
+            </div> */}
 
             {/* <button>Profile</button> */}
+            <div className="flex space-x-4">
+                <Link
+                    to="/shop"
+                    className="p-2 text-xs transition-all duration-300 ease-in-out border-2 border-transparent rounded-lg sm:text-base hover:border-black"
+                >
+                    SHOP
+                </Link>
+                <Link
+                    to="/signin"
+                    className="p-2 text-xs transition-all duration-300 ease-in-out border-2 border-transparent rounded-lg sm:text-base hover:border-black"
+                >
+                    SIGN UP/LOGIN
+                </Link>
+            </div>
         </nav>
     );
 };
