@@ -4,7 +4,7 @@ import {withRouter} from "react-router";
 const HomeItem = ({itemImage, itemName, size, history, match, linkUrl}) => {
     return (
         <div
-            className={`overflow-hidden max-w-sm sm:max-w-none max-h-96 col border-2 border-black rounded-xl cursor-pointer col-span-auto ${
+            className={`overflow-hidden w-full sm:max-w-none max-h-96 col border-2 border-black rounded-xl cursor-pointer col-span-auto ${
                 size == "stretch" ? "md:col-span-2" : ""
             }`}
             onClick={() => history.push(`${match.url}${linkUrl}`)}

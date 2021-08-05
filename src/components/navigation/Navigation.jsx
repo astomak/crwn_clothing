@@ -2,8 +2,9 @@ import React from "react";
 import SearchIcon from "./search-icon.png";
 import {ReactComponent as Logo} from "./crown.svg";
 import {Link} from "react-router-dom";
+import {auth} from "../firebase/firebase.utils";
 
-const Navigation = () => {
+const Navigation = ({userDetails}) => {
     return (
         <nav className="flex justify-between px-2 py-4">
             <Link
@@ -38,16 +39,25 @@ const Navigation = () => {
             <div className="flex space-x-4">
                 <Link
                     to="/shop"
-                    className="p-2 text-xs transition-all duration-300 ease-in-out border-2 border-transparent rounded-lg sm:text-base hover:border-black"
+                    className="p-2 transition-all duration-300 ease-in-out border-2 border-transparent rounded-lg hover:border-black"
                 >
                     SHOP
                 </Link>
-                <Link
-                    to="/signin"
-                    className="p-2 text-xs transition-all duration-300 ease-in-out border-2 border-transparent rounded-lg sm:text-base hover:border-black"
-                >
-                    SIGN UP/LOGIN
-                </Link>
+                {!userDetails ? (
+                    <Link
+                        to="/signin"
+                        className="p-2 transition-all duration-300 ease-in-out border-2 border-transparent rounded-lg hover:border-black"
+                    >
+                        SIGN UP/LOGIN
+                    </Link>
+                ) : (
+                    <button
+                        className="p-2 transition-all duration-300 ease-in-out border-2 border-transparent rounded-lg hover:border-black"
+                        onClick={() => auth.signOut()}
+                    >
+                        SIGN OUT
+                    </button>
+                )}
             </div>
         </nav>
     );
