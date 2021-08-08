@@ -4,7 +4,7 @@ const CollectionItem = ({name, imageUrl, price}) => {
     const [showButton, setButton] = useState(false);
     return (
         <div
-            className="relative w-full p-4 mx-auto cursor-pointer"
+            className="relative w-full p-4 mx-auto cursor-pointer h-full"
             onMouseEnter={() => setButton(true)}
             onMouseLeave={() => setButton(false)}
         >
